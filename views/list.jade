@@ -1,0 +1,31 @@
+.container
+    .content
+        header.page-header
+            h1 Employee list
+        article.row
+            .span14
+                a.btn.primary(href='/create') Create
+                - if (members.length)
+                    table.zebra-striped
+                        thead
+                            tr
+                                th ID
+                                th Name
+                                th Employee Location
+                                th Employee DOB
+                                th Employee DOJ
+                        tbody
+                        - members.forEach(function(member){
+                            tr
+                                td= member['eid']
+                                td= member['name']
+                                td= member['location']
+                                td= member['edob']
+                                td= member['edoj']
+                                td
+                                    a(href='/update?userid='+member['_id']) Update
+                                td
+                                    a(href='/delete?userid='+member['_id']) Delete
+                        - })
+                - else
+                    p No registered members yet.

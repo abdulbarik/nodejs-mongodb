@@ -1,0 +1,33 @@
+.container
+    .content
+        header.page-header
+        .row
+            article.span10
+                h2 Employee Update Form
+                form(action='/update', method='post')
+                    fieldset
+                        input(type="hidden", name="id", value=member._id)
+                        .clearfix
+                            label(for="eid") Employee ID
+                            .input
+                                input#eid.xlarge(type="text", size="30", name="eid",value=member.eid required)
+                        .clearfix
+                            label(for="firstname") Employee Name
+                            .input
+                                input#name.xlarge(type="text", size="30", name="name", value=member.name required)
+                        .clearfix
+                            label(for="location") Location
+                            .input
+                                input#location.xlarge(type="text", size="30", name="location", value=member.location required)
+                        .clearfix
+                            label(for="edob") Employee DOB
+                            .input
+                                input#edob.xlarge(type="text", size="30", name="edob", value=member.edob required)
+                        .clearfix
+                            label(for="edoj") Employee DOJ
+                            .input
+                                input#edoj.xlarge(type="text", size="30", name="edoj", value=member.edoj required)
+                    fieldset
+                        .actions
+                            input.btn.primary(type="submit", value="Update")
+                            a.btn.primary(href='/list') Back

@@ -1,0 +1,33 @@
+.container
+    .content
+        header.page-header
+        .row
+            article.span10
+                h2 Employee Data Form
+                form(action='/save', method='post')
+                    fieldset
+                        .clearfix
+                            label(for="eid") Employee ID
+                            .input
+                                input.xlarge(type="text", size="30", name="eid" required)
+                        .clearfix
+                            label(for="firstname") Employee Name
+                            .input
+                                input#name.xlarge(type="text", size="30", name="name" required)
+                        .clearfix
+                            label(for="location")  Employee Location
+                            .input
+                                input#location.xlarge(type="text", size="30", name="location" required)
+                        .clearfix
+                            label(for="edob") Employee DOB
+                            .input
+                                input#edob.xlarge(type="text", size="30", name="edob" required)
+                        .clearfix
+                            label(for="edoj") Employee DOJ
+                            .input
+                                input#edoj.xlarge(type="text", size="30", name="edoj" required)
+                    fieldset
+                        .actions
+                            input.btn.primary(type="submit", value="Save")
+                            input.btn(type="Reset")
+                            a.btn.primary(href='/list') Back
